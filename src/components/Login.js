@@ -4,7 +4,6 @@ import {
     FormControl,
     FormLabel,
     Input,
-    Checkbox,
     Stack,
     Button,
     Heading,
@@ -24,14 +23,16 @@ export default function Login() {
         minH={'100vh'}
         align={'center'}
         justify={'center'}
-        bg={useColorModeValue('gray.50', 'gray.800')}>
-        <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
+        bg={useColorModeValue('#000080', '#000080.800')} color='#fff'>
+        <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6} >
           <Stack align={'center'}>
             <Heading fontSize={'4xl'}>Expense Manager</Heading>
           </Stack>
+          <hr color='blue'/>
           <Box
             rounded={'lg'}
-            bg={useColorModeValue('white', 'gray.700')}
+            bg={useColorModeValue('#000080', '#000080.400')}
+            color='white'
             boxShadow={'lg'}
             p={8}>
             <Stack spacing={4}>
@@ -47,8 +48,7 @@ export default function Login() {
                 <Stack
                   direction={{ base: 'column', sm: 'row' }}
                   align={'start'}
-                  justify={'space-between'}>
-                  <Checkbox>Remember me</Checkbox>
+                  justify={'space-between'}>                  
                 </Stack>
                 <Button
                   bg={'blue.400'}
@@ -56,6 +56,8 @@ export default function Login() {
                   _hover={{
                     bg: 'blue.500',
                   }}
+                  width={['50%', '100%']}
+                  float={['left', 'none']}
                   onClick={(e)=>handleSubmit(e)} 
                   >
                   Login

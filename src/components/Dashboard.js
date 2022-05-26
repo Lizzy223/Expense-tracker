@@ -6,9 +6,7 @@ import {
 	Flex,
 	HStack,
 	VStack,
-	Icon,
 	useColorModeValue,
-	Link,
 	Drawer,
 	DrawerContent,
 	Text,
@@ -21,11 +19,6 @@ import {
 	Circle,
 } from "@chakra-ui/react";
 import {
-	FiHome,
-	FiTrendingUp,
-	FiCompass,
-	FiStar,
-	FiSettings,
 	FiMenu,
 	FiBell,
 	FiChevronDown,
@@ -33,14 +26,8 @@ import {
 
 import { useNavigate } from "react-router-dom";
 import Content from './Content'
+import Filter from './Filter'
 
-const LinkItems = [
-	{ name: "Home", icon: FiHome },
-	{ name: "Trending", icon: FiTrendingUp },
-	{ name: "Explore", icon: FiCompass },
-	{ name: "Favourites", icon: FiStar },
-	{ name: "Settings", icon: FiSettings },
-];
 
 export default function Dashboard({ children }) {
 	const { isOpen, onOpen, onClose } = useDisclosure();
@@ -86,56 +73,14 @@ const SidebarContent = ({ onClose, ...rest }) => {
 			h="full"
 			{...rest}
 		>
-			<Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
-				<Text fontSize="2xl" fontFamily="monospace" fontWeight="bold">
-					Logo
-				</Text>
+			<Flex h={["20",'6']} alignItems="right" mx="8" justifyContent="space-between">
 				<CloseButton display={{ base: "flex", md: "none" }} onClick={onClose} />
 			</Flex>
-			{LinkItems.map((link) => (
-				<NavItem key={link.name} icon={link.icon}>
-					{link.name}
-				</NavItem>
-			))}
+			<Filter/>
 		</Box>
 	);
 };
 
-const NavItem = ({ icon, children, ...rest }) => {
-	return (
-		<Link
-			href="#"
-			style={{ textDecoration: "none" }}
-			_focus={{ boxShadow: "none" }}
-		>
-			<Flex
-				align="center"
-				p="4"
-				mx="4"
-				borderRadius="lg"
-				role="group"
-				cursor="pointer"
-				_hover={{
-					bg: "cyan.400",
-					color: "white",
-				}}
-				{...rest}
-			>
-				{icon && (
-					<Icon
-						mr="4"
-						fontSize="16"
-						_groupHover={{
-							color: "white",
-						}}
-						as={icon}
-					/>
-				)}
-				{children}
-			</Flex>
-		</Link>
-	);
-};
 
 const MobileNav = ({ onOpen, ...rest }) => {
 
@@ -143,7 +88,7 @@ const MobileNav = ({ onOpen, ...rest }) => {
 	const logOut = (e) => {
 		//localStorage.removeItem("user");
 		//setUser(null);
-		navigate("/login");
+		navigate("/");
 		window.location.reload();
 	};
 

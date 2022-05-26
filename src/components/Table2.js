@@ -119,7 +119,7 @@ const Table2 = () =>{
                     {
                         rows.map((e)=>{
                             return(
-                                <Trdata date={e.date} merchant={e.merchant} total={e.total} status={e.status} comment={e.comment} />
+                                <Trdata key={e.id} date={e.date} merchant={e.merchant} total={e.total} status={e.status} comment={e.comment} />
                             )
                         })
                     }

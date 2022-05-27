@@ -34,7 +34,7 @@ const Filter = () =>{
                 </HStack>
                 <FormControl>
                     <FormLabel htmlFor='merchant'>Merchant</FormLabel>
-                    <Select placeholder=''>
+                    <Select placeholder='' bg='#ccc' color='#000'>
                         <option value='option1'></option>
                         <option value='option1'>Taxi</option>
                         <option value='option2'>Breakfast</option>

@@ -54,7 +54,7 @@ export default function Dashboard({ children }) {
 			{/* mobilenav */}
 			<MobileNav onOpen={onOpen} />
 			<Box ml={{ base: 0, md: 60 }} p="4">
-				{children}
+				{/* {children} */}
 				<Content/>
 			</Box>
 		</Box>
@@ -128,7 +128,7 @@ const MobileNav = ({ onOpen, ...rest }) => {
 						>
 							<HStack>
 								<Circle
-									size="3rem"
+									size="2.5rem"
 									bgColor="green"
 									color="white"
 									textTransform="uppercase"

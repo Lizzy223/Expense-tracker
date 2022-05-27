@@ -103,8 +103,8 @@ const Table2 = () =>{
 
     return(
         <>
-            <TableContainer>
-                <Table size='md'>
+            <TableContainer overflow='auto' size={['sm','md' ]} width={['100%','100%']} height={['50%', '100%']} >
+                <Table overflow='auto' size={['sm','md' ]} width={['50%','70%']} height={['50%', '100%']} >
                     <Thead>
                     <Tr>
                         <Th></Th>
